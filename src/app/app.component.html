@@ -1,0 +1,33 @@
+<nav class="navbar navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand">
+      <img src="https://images.vexels.com/media/users/3/142812/isolated/preview/992801ae3182fa95353e941cfcac9293-shield-logo-emblem-design-by-vexels.png" alt="" width="30" height="24">
+      Coin Finder
+    </a>
+  </div>
+</nav>
+
+<div class='container'>
+
+  <form>
+    <div class='form-group'>
+      <input type='text' name='coin-name' class='form-control' #coinname placeholder="Enter Coin Name">
+    </div>
+    <button (click)="getCoinDetails(coinname.value)" type="submit" class="btn btn-primary">Get Coin Details</button>
+  </form>
+
+  <div class="row bg-light mt-4 p-4" *ngIf='coinData'>
+    <div class="">
+      <div *ngIf="coinData.id">
+        <p>{{coinData.name}}</p>
+        <p>€ {{coinData.market_data.current_price.eur}}</p>
+        <p>{{coinData.symbol}}</p>
+        <p>{{coinData.description.en}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  
+
+</div>
