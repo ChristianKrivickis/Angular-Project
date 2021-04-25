@@ -1,26 +1,27 @@
-import { Component } from '@angular/core';
-import { CoinApiService } from './services/coin-api.component'
-import { APIResponse } from './apiresponse'
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './services/coin-api.service'
+import { ICoin } from './ICoin'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [CoinApiService]
+  providers: [DataService]
 })
-export class AppComponent {
-  coinData: APIResponse;
+
+export class AppComponent{
+  searchedCoinData: ICoin[];
   errorMessage: any;
 
-  constructor(private _coinService:CoinApiService) {}
+  constructor(private _coinService:DataService) {}
 
-  getCoinDetails(coinName:string) : boolean {
-    this._coinService.getCoinData(coinName).subscribe(
-      coinData => {
-        this.coinData = coinData;
+  searchedCoin(coinName:string) : boolean{
+    this._coinService.searchForCoin(coinName).subscribe(
+      searchedCoinData => {
+        this.searchedCoinData = searchedCoinData;
       },
       error => this.errorMessage = <any>error
     );
-  return false;
+    return false;
   }
 }

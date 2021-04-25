@@ -3,12 +3,16 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http'
-import { CoinApiService } from './services/coin-api.component'
+import { DataService } from './services/coin-api.service';
+import { RowComponent } from './components/row/row.component';
+import { ListComponent } from './components/list/list.component'
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    RowComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,
