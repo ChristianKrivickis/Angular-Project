@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './services/coin-api.service'
-import { ICoin } from './ICoin'
+import { ICoin } from './interfaces/ICoin'
 
 @Component({
   selector: 'app-root',

@@ -2,12 +2,11 @@ body, html {
     height: 100%;
 
     background-image: url("https://woodcomm.ie/wp-content/uploads/2018/10/dark-blue-gradient-background-9562-1024x616.jpg");
-  
+
     /* Full height */
     height: 100%;
   
     /* Center and scale the image nicely */
     background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
 }
