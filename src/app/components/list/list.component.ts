@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from 'src/app/services/coin-api.service'
+import { CoinAPIService } from 'src/app/services/coin-api.service'
 import { ICoin } from 'src/app/interfaces/ICoin'
 
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
-  providers: [DataService]
+  providers: [CoinAPIService]
 })
 export class ListComponent implements OnInit {
   coinData: ICoin[];
   errorMessage: any;
 
-  constructor(private _coinService:DataService) {}
+  constructor(private _coinService:CoinAPIService) {}
 
   ngOnInit() {
     this.getCoinDetails();

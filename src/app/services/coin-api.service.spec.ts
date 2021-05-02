@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DataService } from './coin-api.service';
+import { CoinAPIService } from './coin-api.service';
 
 describe('DataService', () => {
-  let service: DataService;
+  let service: CoinAPIService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DataService);
+    service = TestBed.inject(CoinAPIService);
   });
 
   it('should be created', () => {

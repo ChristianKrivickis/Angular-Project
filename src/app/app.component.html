@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand"><img src="https://static.thenounproject.com/png/1546704-200.png" style="height: 50px;">Coin Bank</a>
-      <form class="d-flex">
+    <a class="navbar-brand" href="favorites.html" src="https://static.thenounproject.com/png/1546704-200.png" style="height: 50px;">Coin Bank</a>
+    <form class="d-flex">
         <input type='text' name='coin-name' class='form-control' #coinname placeholder="Enter Coin Name">
         <button (click)="searchedCoin(coinname.value)" type="submit" class="btn btn-secondary">Search</button>
       </form>
@@ -9,25 +9,14 @@
 </nav>
 
 <div class='container'>
-
   <div class="row bg-light mt-5">
     <div class="container bg-dark text-white">
       <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-        <div class="col">
           <div class="p-1"><h2> Rank </h2></div>
-        </div>
-        <div class="col">
           <div class="p-1"><h2> Icon </h2></div>
-        </div>
-        <div class="col">
           <div class="p-1"><h2> Ticker </h2></div>
-        </div>
-        <div class="col">
           <div class="p-1"><h2> Name </h2></div>
-        </div>
-        <div class="col">
           <div class="p-1"><h2> Price </h2></div>
-        </div>
       </div>
     </div>
   </div>
@@ -35,24 +24,17 @@
   <div class="row bg-light mt-3"  *ngIf='searchedCoinData'>
     <div class="container bg-dark text-white" href="">
       <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-        <div class="col">
-          <div class="p-1" id="rank"><h2> {{searchedCoinData.market_cap_rank}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="icon" style="height: 44px;"><img src="{{searchedCoinData.image.small}}"></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="Ticker"><h2> {{searchedCoinData.symbol}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="name"><h2> {{searchedCoinData.name}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="name"><h2> €{{searchedCoinData.market_data.current_price.eur}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="name"><button type="submit" class="btn btn-outline-success">Add</button></div>
-        </div>
+          <div class="col p-1"><h2 name="market_cap_rank" value={{searchedCoinData.market_cap_rank}} #market_cap_rank> {{searchedCoinData.market_cap_rank}} </h2></div>
+
+          <div class="col p-1" style="height: 44px;"> <img name="image" #image value={{searchedCoinData.image.small}} src="{{searchedCoinData.image.small}}" ></div>
+
+          <div class="col p-1"> <h2 name="symbol" #symbol value={{searchedCoinData.symbol}}>{{searchedCoinData.symbol}} </h2></div>
+
+          <div class="col p-1"> <h2 name="name" value={{searchedCoinData.market_cap_rank}} #name > {{searchedCoinData.name}} </h2></div>
+
+          <div class="col p-1"> <h2 name="current_price" value={{searchedCoinData.market_data.current_price.eur}} #current_price> €{{searchedCoinData.market_data.current_price.eur}} </h2></div>
+
+          <div class="col p-1"> <input value="Add to Favorites" type="submit" (click)="addCoinToFavorites(symbol.value, name.value, image.value, current_price.value, market_cap_rank.value)" class="btn btn-outline-success"></div>
       </div>
     </div>
   </div>

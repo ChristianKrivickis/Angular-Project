@@ -1,19 +1,19 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './services/coin-api.service'
-import { ICoin } from './interfaces/ICoin'
+import { CoinAPIService } from './services/coin-api.service'
+import { ICoin, Coin } from './interfaces/ICoin'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [DataService]
+  providers: [CoinAPIService]
 })
 
 export class AppComponent{
   searchedCoinData: ICoin[];
   errorMessage: any;
 
-  constructor(private _coinService:DataService) {}
+  constructor(private _coinService:CoinAPIService) {}
 
   searchedCoin(coinName:string) : boolean{
     this._coinService.searchForCoin(coinName).subscribe(
@@ -24,4 +24,13 @@ export class AppComponent{
     );
     return false;
   }
+
+  addCoinToFavorites(symbol: string, name: string, image: string, current_price: number, market_cap_rank: number) : boolean{
+    let tempCoin : ICoin;
+    tempCoin = new Coin(symbol, name, image, current_price, market_cap_rank);
+    console.log(tempCoin);
+    this._coinService.addCoinData(tempCoin);
+    return false;
+  }
+  
 }

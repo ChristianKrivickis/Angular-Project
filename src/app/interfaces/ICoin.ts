@@ -1,22 +1,19 @@
 export interface ICoin {
-    id: string,
     symbol: string,
     name: string,
     image: string,
-    current_price: string,
-    market_cap_rank: string  
+    current_price: number,
+    market_cap_rank: number  
 }
 
-export class coin{
-    id: string;
+export class Coin{
     symbol: string;
     name: string;
     image: string;
-    current_price: string;
-    market_cap_rank: string;
+    current_price: number;
+    market_cap_rank: number;
     
-    constructor(id: string, symbol: string, name: string, image: string, current_price: string, market_cap_rank: string){
-        this.id = id;
+    constructor(symbol: string, name: string, image: string, current_price: number, market_cap_rank: number){
         this.symbol = symbol;
         this.name = name;
         this.image = image;

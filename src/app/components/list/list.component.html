@@ -1,30 +1,4 @@
-<!--
-<div class="row bg-light mt-3">
-    <div class="container bg-dark text-white">
-      <div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3">
-        <div class="col">
-          <div class="p-1" id="rank"><h2> {{coinData[0].market_cap_rank}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="icon"><img style="height: 44px;" src="{{coinData[0].image}}"></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="Ticker"><h2> {{coinData[0].symbol}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="name"><h2> {{coinData[0].name}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="name"><h2> €{{coinData[0].current_price}} </h2></div>
-        </div>
-        <div class="col">
-          <div class="p-1" id="name"><button type="submit" class="btn btn-outline-success">Add</button></div>
-        </div>
-      </div>
-    </div>
-</div>
--->
-
 <app-row *ngFor="let c of coinData" [coin] = "c"> </app-row>
+
 
 
