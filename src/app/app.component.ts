@@ -17,6 +17,7 @@ export class AppComponent{
   constructor(private _coinService:CoinAPIService) {}
 
   ngOnInit() : void{
+    
   }
 
   searchedCoin(coinName:string) : boolean{

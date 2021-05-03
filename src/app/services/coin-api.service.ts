@@ -60,7 +60,7 @@ export class CoinAPIService{
     this.coinDataCollection.add(JSON.parse(JSON.stringify(coin)))
   }
 
-  getFirestoreData(){
-    return this.coins_data;
+  deleteItem(favoriteCoinName: string): void{
+    this.coinDataCollection.doc(favoriteCoinName).delete();
   }
 }
