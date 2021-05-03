@@ -11,9 +11,13 @@ import { ICoin, Coin } from './interfaces/ICoin'
 
 export class AppComponent{
   searchedCoinData: ICoin[];
+  favoritecoinsData: ICoin[];
   errorMessage: any;
 
   constructor(private _coinService:CoinAPIService) {}
+
+  ngOnInit() : void{
+  }
 
   searchedCoin(coinName:string) : boolean{
     this._coinService.searchForCoin(coinName).subscribe(

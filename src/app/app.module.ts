@@ -9,13 +9,15 @@ import { ListComponent } from './components/list/list.component';
 
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireModule } from '@angular/fire/';
-import { environment } from "../environments/environment"
+import { environment } from "../environments/environment";
+import { FavoriteComponent } from './components/favorite/favorite.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     RowComponent,
-    ListComponent
+    ListComponent,
+    FavoriteComponent
   ],
   imports: [
     BrowserModule,

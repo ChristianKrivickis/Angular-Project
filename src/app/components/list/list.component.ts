@@ -10,12 +10,17 @@ import { ICoin } from 'src/app/interfaces/ICoin'
 })
 export class ListComponent implements OnInit {
   coinData: ICoin[];
+  favoriteCoinData: ICoin[];
   errorMessage: any;
 
   constructor(private _coinService:CoinAPIService) {}
 
   ngOnInit() {
     this.getCoinDetails();
+
+    this._coinService.getFavoriteCoin().subscribe(favoriteCoinData =>{
+      this.favoriteCoinData = favoriteCoinData
+    });
   }
 
   getCoinDetails() {

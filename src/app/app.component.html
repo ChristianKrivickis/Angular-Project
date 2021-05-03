@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="favorites.html" src="https://static.thenounproject.com/png/1546704-200.png" style="height: 50px;">Coin Bank</a>
+    <a class="navbar-brand" src="https://static.thenounproject.com/png/1546704-200.png" style="height: 50px;">Coin Bank</a>
     <form class="d-flex">
         <input type='text' name='coin-name' class='form-control' #coinname placeholder="Enter Coin Name">
         <button (click)="searchedCoin(coinname.value)" type="submit" class="btn btn-secondary">Search</button>
@@ -30,7 +30,7 @@
 
           <div class="col p-1"> <h2 name="symbol" #symbol value={{searchedCoinData.symbol}}>{{searchedCoinData.symbol}} </h2></div>
 
-          <div class="col p-1"> <h2 name="name" value={{searchedCoinData.market_cap_rank}} #name > {{searchedCoinData.name}} </h2></div>
+          <div class="col p-1"> <h2 name="name" value={{searchedCoinData.name}} #name > {{searchedCoinData.name}} </h2></div>
 
           <div class="col p-1"> <h2 name="current_price" value={{searchedCoinData.market_data.current_price.eur}} #current_price> €{{searchedCoinData.market_data.current_price.eur}} </h2></div>
 
@@ -38,6 +38,8 @@
       </div>
     </div>
   </div>
+
+  
 
   <app-list> </app-list>
 
